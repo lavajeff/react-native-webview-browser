@@ -9,6 +9,9 @@ const WEBVIEW_REF = "webview";
 class Webbrowser extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      scalesPageToFit: true
+    };
   }
 
   render() {
@@ -31,7 +34,7 @@ class Webbrowser extends Component {
           onNavigationStateChange={this.onNavigationStateChange}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
           startInLoadingState={true}
-          // scalesPageToFit={this.state.scalesPageToFit}
+          scalesPageToFit={this.state.scalesPageToFit}
           onLoad={() => this.refs[WEBVIEW_REF].postMessage(this.props.cookie)}
           {...(this.props.jsCode
             ? { injectedJavaScript: this.props.jsCode }
