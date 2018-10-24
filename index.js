@@ -4,6 +4,8 @@ import React, { Component } from "react";
 import { View, WebView } from "react-native";
 import PropTypes from "prop-types";
 
+import styles from "./styles";
+
 const WEBVIEW_REF = "webview";
 
 class Webbrowser extends Component {
@@ -18,15 +20,23 @@ class Webbrowser extends Component {
     return (
       <View
         style={[
+          styles.container,
           this.props.backgroundColor && {
             backgroundColor: this.props.backgroundColor
           }
         ]}
       >
+        <View style={styles.header}>
+          <View style={{ flexDirection: "row" }}>
+            {/* {this.renderBackButton()} */}
+            {/* {this.renderAddressBar()} */}
+          </View>
+          {/* {this.renderStatusBar()} */}
+        </View>
         <WebView
           ref={WEBVIEW_REF}
           automaticallyAdjustContentInsets={false}
-          // style={styles.webView}
+          style={styles.webView}
           source={{ uri: this.props.url }}
           javaScriptEnabled={true}
           domStorageEnabled={true}
