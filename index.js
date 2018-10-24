@@ -31,7 +31,7 @@ class Webbrowser extends Component {
           onNavigationStateChange={this.onNavigationStateChange}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
           startInLoadingState={true}
-          scalesPageToFit={this.state.scalesPageToFit}
+          // scalesPageToFit={this.state.scalesPageToFit}
           onLoad={() => this.refs[WEBVIEW_REF].postMessage(this.props.cookie)}
           {...(this.props.jsCode
             ? { injectedJavaScript: this.props.jsCode }
