@@ -23,7 +23,7 @@ class Webbrowser extends Component {
         <WebView
           ref={WEBVIEW_REF}
           automaticallyAdjustContentInsets={false}
-          style={styles.webView}
+          // style={styles.webView}
           source={{ uri: this.props.url }}
           javaScriptEnabled={true}
           domStorageEnabled={true}
