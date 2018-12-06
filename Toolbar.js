@@ -26,6 +26,7 @@ class Toolbar extends BaseComponent {
       onBack: props.onBack,
       onHome: props.onHome,
       onStop: props.onStop,
+      onOpenInExternalBrowser: props.onOpenInExternalBrowser,
       onForward: props.onForward,
       webViewRef: props.webViewRef
     };
@@ -123,6 +124,13 @@ class Toolbar extends BaseComponent {
             source={require("./assets/images/baseline_chevron_right_white_48.png")}
           />
         </Button>
+
+        <Button onPress={this.state.onOpenInExternalBrowser}>
+          <Image
+            style={this.buttonStyle()}
+            source={require("./assets/images/baseline_open_in_browser_white_48.png")}
+          />
+        </Button>
       </View>
     );
   }
@@ -147,6 +155,7 @@ Toolbar.defaultProps = {
   onBack: () => {},
   onHome: () => {},
   onStop: () => {},
+  onOpenInExternalBrowser: () => {},
   onForward: () => {}
 };
 

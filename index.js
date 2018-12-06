@@ -4,7 +4,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { View, WebView } from "react-native";
+import { View, WebView, Linking } from "react-native";
 
 import BaseComponent from "./BaseComponent";
 import Utils from "./Utils";
@@ -74,6 +74,7 @@ class Webbrowser extends BaseComponent {
       "goForward",
       "reload",
       "stop",
+      "openInExternalBrowser",
       "onNavigationStateChange",
       "onShouldStartLoadWithRequest",
       "renderToolbar"
@@ -137,6 +138,7 @@ class Webbrowser extends BaseComponent {
         onHome={this.reload}
         onForward={this.goForward}
         onStop={this.stop}
+        onOpenInExternalBrowser={this.openInExternalBrowser}
         backButtonEnabled={this.state.backButtonEnabled}
         forwardButtonEnabled={this.state.forwardButtonEnabled}
         hideRefreshButton={this.props.hideRefreshButton}
@@ -210,6 +212,11 @@ class Webbrowser extends BaseComponent {
 
   stop() {
     this.refs[WEBVIEW_REF].stopLoading();
+  }
+
+  openInExternalBrowser() {
+    console.log("hello");
+    Linking.openURL(this.state.currentUrl);
   }
 
   onShouldStartLoadWithRequest(event) {
