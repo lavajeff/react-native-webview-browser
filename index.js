@@ -215,7 +215,7 @@ class Webbrowser extends BaseComponent {
   }
 
   openInExternalBrowser() {
-    console.log("hello");
+    this.props.segmentTracking(this.state.currentUrl);
     Linking.openURL(this.state.currentUrl);
   }
 
