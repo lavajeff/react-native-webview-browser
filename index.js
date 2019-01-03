@@ -81,6 +81,10 @@ class Webbrowser extends BaseComponent {
     );
   }
 
+  componentDidMount() {
+    this.props.getWebviewRef(this.refs[WEBVIEW_REF]);
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       url: Utils.sanitizeUrl(nextProps.url)
@@ -182,6 +186,10 @@ class Webbrowser extends BaseComponent {
             ? { injectedJavaScript: this.state.jsCode }
             : {})}
           {...this.props.webviewProps}
+          onLoadEnd={() => this.props.stopRefreshing(false)}
+          onMessage={event => {
+            this.props.getWebviewPosition(event.nativeEvent.data);
+          }}
         />
         {this.renderToolbar()}
       </View>
