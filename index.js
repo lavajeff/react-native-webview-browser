@@ -187,9 +187,9 @@ class Webbrowser extends BaseComponent {
             : {})}
           {...this.props.webviewProps}
           onLoadEnd={() => this.props.stopRefreshing(false)}
-          onMessage={event => {
-            this.props.getWebviewPosition(event.nativeEvent.data);
-          }}
+          // onMessage={event => {
+          //   this.props.getWebviewPosition(event.nativeEvent.data);
+          // }}
         />
         {this.renderToolbar()}
       </View>
