@@ -7,5 +7,8 @@
     "url": "git+https://github.com/lavajeff/react-native-webview-browser.git"
   },
   "author": "Jeffrey Chai <jeffrey@lavax.co>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-native-webview": "^5.10.0"
+  }
 }

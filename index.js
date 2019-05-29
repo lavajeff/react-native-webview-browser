@@ -4,7 +4,9 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { View, WebView, Linking } from "react-native";
+import { View, Linking } from "react-native";
+
+import { WebView } from "react-native-webview";
 
 import BaseComponent from "./BaseComponent";
 import Utils from "./Utils";
